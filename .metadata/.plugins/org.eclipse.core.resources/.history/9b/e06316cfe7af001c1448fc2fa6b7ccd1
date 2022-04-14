@@ -1,0 +1,22 @@
+server.port=8082
+spring.application.name=displayservice
+
+#This property tellls ureka client application to search eureka on given URL
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+#Following property decides How many last calls to consider for remote microservice is available OR not?
+resilience4j.circuitbreaker.instances.messageservice.sliding-window-size=10
+
+#How many last calls to consider for remote microservice is available OR not?
+resilience4j.circuitbreaker.instances.messageservice.failure-rate-threshold=50
+
+#How much time switch to remain in Open Stage
+#During this time no calls are made to remote microservices
+resilience4j.circuitbreaker.instances.messageservice.wait-duration-in-open-state=30000
+
+#This will automatically change the state of switch from half opened to open after wait duration is over
+resilience4j.circuitbreaker.instances.messageservice.automatic-transition-from-open-to-half-open-enabled=true
+
+resilience4j.circuitbreaker.instances.messageservice.permitted-number-of-calls-in-half-open-state=5
+
+spring.zipkin.base-url=http://localhost:9411

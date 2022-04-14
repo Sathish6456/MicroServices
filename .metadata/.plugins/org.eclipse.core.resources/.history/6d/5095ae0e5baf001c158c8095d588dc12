@@ -1,0 +1,6 @@
+
+spring.application.name=messageservice
+
+#This property tells Eureka client application to search Eureka on given URL 
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+#spring.zipkin.base-url=http://localhost:9411
